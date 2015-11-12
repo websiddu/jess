@@ -1,0 +1,27 @@
+p#notice= notice
+= link_to '<< Back', projects_path, class: "button small"
+
+- if user_signed_in?
+  = link_to 'Destroy', @project, method: :delete, confirm: 'Are you sure?'
+  = link_to 'Edit', edit_project_path(@project),  class: "right button small"
+
+h1 = @project.title
+pre
+  = current_user.authentication_token
+date = @project.date
+p.mute = @project.shortDescription
+p.url
+  a href="#{@project.projectUrl}" target="_blank"
+    = @project.projectUrl
+p.mute
+  == @project.description.html_safe
+p
+  strong
+    = "tags : "
+  = @project.tags
+
+img src="#{@project.banner}"
+
+
+
+

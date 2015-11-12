@@ -1,0 +1,90 @@
+= form_for(@project) do |f|
+  - if @project.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@project.errors.count, "error")
+        | prohibited this project from being saved:
+      ul
+        - @project.errors.full_messages.each do |msg|
+          li = msg
+  .row
+    .large-12.columns
+      = f.label :title
+      = f.text_field :title
+
+  .row
+    .large-12.columns
+      = f.label :sequence
+      = f.number_field :sequence
+
+  .row
+    .large-12.columns
+      = f.label :projectUrl
+      = f.text_field :projectUrl
+  .row
+    .large-12.columns
+      = f.label :date
+      = f.date_field :date
+  .row
+    .large-12.columns
+      = f.label :isActive
+      = f.check_box :isActive
+  .row
+    .large-12.columns
+      = f.label :size
+      = f.select(:size, [['large', 'large'], ['medium', 'medium'], ['small', 'small'], ['mini', 'mini'], ['other', 'other'],])
+  br
+  .row
+    .large-12.columns
+      = f.label :shortDescription
+      = f.text_field :shortDescription
+
+  .row
+    .large-12.columns
+      = f.label :description
+      #textEditor.editor
+      = f.text_area :description
+
+  .row
+    .large-12.columns
+      = f.label :tags
+      = f.text_field :tags
+
+  .row
+    .large-12.columns
+      = f.label :thumbnail
+      = f.text_field :thumbnail
+  .row
+    .large-12.columns
+      = f.label :banner
+      = f.text_field :banner
+  br
+
+  br
+  .row
+    .large-12.columns
+      = f.label :screenshots
+      = f.text_field :screenshots
+
+  br
+
+  .row
+    .large-12.columns
+      = f.label :votes
+      = f.number_field :votes
+
+  br
+
+  .row
+    .large-12.columns
+      = f.label :archived
+      = f.check_box :archived
+
+  .actions
+    button.submit type="submit"
+      = "Submit"
+
+
+  / field :thumbnail
+  / field :banner
+  / field :screenshots

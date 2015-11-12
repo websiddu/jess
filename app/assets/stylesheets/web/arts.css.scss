@@ -1,0 +1,28 @@
+#sortable-list li.art-item {
+  min-height: 132px;
+  padding: 20px;
+}
+
+.art {
+  position: relative;
+}
+
+.art-img {
+  position: absolute;
+  img {
+    height: 90px;
+    border: solid 5px #fff;
+    box-shadow: 0 0 5px #eee;
+  }
+}
+
+.art-content {
+  padding-left: 130px;
+}
+
+.actions {
+  a {
+    display: inline-block;
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,28 @@
+h1 Listing arts
+- if user_signed_in?
+  = link_to 'New Art', new_art_path, class: "button right small"
+
+.clear
+hr
+
+ul#sortable-list
+  - @arts.each do |art|
+    li class="art-item status" id="#{art.id}"
+      div.art
+        .art-img
+          img src="#{art.preview}"
+        .art-content
+          strong
+            = art.name
+          span style="margin-left: 20px; color: #888; font-size: 12px;"
+            = "Views "
+            = art.views
+          p
+            = art.content
+          .actions
+            - if user_signed_in?
+              = link_to 'Show', art
+              '
+              = link_to 'Edit', edit_art_path(art)
+              '
+              = link_to 'Destroy', art, method: :delete, confirm: 'Are you sure?'

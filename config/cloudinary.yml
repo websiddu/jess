@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: jessicabao
+  api_key: '134571127318282'
+  api_secret: UgtDqFqxh9Jf75Fb7pLkjwnOpWc
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: jessicabao
+  api_key: '134571127318282'
+  api_secret: UgtDqFqxh9Jf75Fb7pLkjwnOpWc
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: jessicabao
+  api_key: '134571127318282'
+  api_secret: UgtDqFqxh9Jf75Fb7pLkjwnOpWc
+  enhance_image_tag: true
+  static_image_support: false

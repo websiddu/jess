@@ -1,0 +1,25 @@
+br
+
+- if user_signed_in?
+  = link_to 'New Project', new_project_path, class: "button small"
+
+br
+ul#sortable-list
+  - @projects.reverse!.each do |project|
+    li class="project status-#{project.archived}" id="#{project.id}"
+      .project-item
+        .draghandle.left
+        h2.title.left
+          span.muted
+            = project.sequence
+          '
+          = link_to project.title, project
+        - if user_signed_in?
+          div.actions.right
+            = link_to 'Edit', edit_project_path(project)
+            == " &middot; "
+            = link_to 'Destroy', project, method: :delete, confirm: 'Are you sure?'
+      / br
+      / div.project-description
+      /   == truncate(strip_tags(project.description), :length => 200).html_safe
+//= will_paginate @projects
