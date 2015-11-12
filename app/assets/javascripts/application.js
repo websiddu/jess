@@ -22,8 +22,3 @@
 //= require ws
 //= require_tree ./web
 
-//= require ace/ace
-//= require ace/theme-twilight
-//= require ace/mode-html
-
-
