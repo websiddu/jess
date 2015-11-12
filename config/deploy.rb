@@ -84,6 +84,8 @@ namespace :deploy do
         run_locally do
           with rails_env: fetch(:rails_env) do
             execute 'rake assets:precompile'
+            execute 'touch assets.tgz && rm assets.tgz'
+            execute 'tar zcvf assets.tgz public/assets/'
           end
         end
 
@@ -91,7 +93,10 @@ namespace :deploy do
           with rails_env: fetch(:rails_env) do
             old_manifest_path = "#{shared_path}/public/assets/manifest*"
             execute :rm, old_manifest_path if test "[ -f #{old_manifest_path} ]"
-            upload!('./public/assets/', "#{shared_path}/public/", recursive: true)
+            upload!('assets.tgz', "#{shared_path}/public/", recursive: true)
+            execute("tar zxvf #{shared_path}/public/assets.tgz; rm #{shared_path}/public/assets.tgz")
+
+            # upload!('./public/assets/', "#{shared_path}/public/", recursive: true)
           end
         end
 
@@ -101,6 +106,27 @@ namespace :deploy do
 
   end
 
+
+
+  # namespace :assets do
+  #   desc 'Run the precompile task locally and rsync with shared'
+  #   task :precompile do
+  #     run_locally('rm -rf public/assets/*')
+  #     run_locally("RAILS_ENV=#{rails_env} rake assets:precompile")
+  #     run_locally('touch assets.tgz && rm assets.tgz')
+  #     run_locally('tar zcvf assets.tgz public/assets/')
+  #     run_locally('mv assets.tgz public/assets/')
+  #   end
+
+  #   desc 'Upload precompiled assets'
+  #   task :upload_assets do
+  #     upload "public/assets/assets.tgz", "#{release_path}/assets.tgz"
+  #     run "cd #{release_path}; tar zxvf assets.tgz; rm assets.tgz"
+  #   end
+  # end
+
+  # before ':update_code', 'assets:precompile'
+  # after 'deploy:create_symlink', 'assets:upload_assets'
 
   before :starting,     :check_revision
   after  :finishing,    :compile_assets

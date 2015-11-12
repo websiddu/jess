@@ -57,10 +57,7 @@ gem 'slim'
 gem 'cloudinary'
 
 gem 'mongoid_taggable'
-gem 'rails_12factor'
-gem 'rails_serve_static_assets'
 
-gem 'heroku-deflater', :group => :production
 
 gem 'yajl-ruby'
 
@@ -72,7 +69,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-
+# group :assets do
+#   gem 'turbo-sprockets-rails3'
+# end
 
 group :development do
     gem 'capistrano',         require: false
