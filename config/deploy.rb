@@ -1,8 +1,8 @@
 # Change these
 server '104.131.222.78', roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@github.com:jessicabao/api.jessicabao.git'
-set :application,     'api.jessicabao'
+set :repo_url,        'git@github.com:websiddu/jess.git'
+set :application,     'jess'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0

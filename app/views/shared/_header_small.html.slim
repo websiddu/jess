@@ -8,9 +8,4 @@ header.row.header.small
       = "I am a user researcher, a self-starter, and a problem solver."
       br
       = "Empathy, curiosity, and simplicity keep me tuned and creative."
-    .links.text-center
-      = link_to "Home &nbsp;&nbsp;&nbsp;".html_safe, root_path
-      = " • "
-      = link_to "&nbsp;&nbsp;&nbsp; About &nbsp;&nbsp;&nbsp;".html_safe, root_path
-      = " • "
-      = link_to "&nbsp;&nbsp;&nbsp; Resume ".html_safe, root_path
+    = render "shared/nav"

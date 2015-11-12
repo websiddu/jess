@@ -8,25 +8,17 @@
         - @project.errors.full_messages.each do |msg|
           li = msg
   = f.input :title
-  = f.input :sequence
-  = f.input :projectUrl
-  = f.input :date
-  = f.input :isActive
-  = f.input :size, collection: [['large', 'large'], ['medium', 'medium'], ['small', 'small'], ['mini', 'mini'], ['other', 'other']]
-
-  = f.input :shortDescription
-
-      / #textEditor.editor
-  = f.input :description, :as => :ckeditor
-
-  = f.input :tags
-
   = f.input :thumbnail
   = f.input :banner
-  = f.input :screenshots
+  = f.input :team
+  = f.input :tools
+  = f.input :contribution
+  = f.input :shortDescription
+  = f.input :description, :as => :ckeditor
+  = f.input :tags
+  = f.input :date
 
-  = f.check_box :archived
-
+  br
   .actions
     = f.button :submit
 
