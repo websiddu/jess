@@ -1,13 +1,22 @@
 header.row.header
-  .col-lg-3
-    = link_to root_path do
-      .header-img
+  .col-lg-12
+    .header-img.text-center
+      = link_to root_path do
         img src="https://media.licdn.com/media/AAEAAQAAAAAAAAZQAAAAJGI1MjJmMjg1LTVlYzctNDRkYS04OTE3LTRjODVmMmJjYWE4YQ.jpg" alt=""
-  .col-lg-9
-    .header-text
-      = "Hi I am "
-      strong Jessica
-      = ".. I am a "
-      span
-        = "user researcher"
-      = ", a self-starter, and a problem solver. Empathy, curiosity, and simplicity keep me tuned and creative."
+    .header-brand.text-center
+      = link_to root_path do
+        h1 = "JESSICA BAO"
+
+
+  .col-lg-12
+    .header-text.text-center
+      = "I am a user researcher, a self-starter, and a problem solver."
+      br
+      = "Empathy, curiosity, and simplicity keep me tuned and creative."
+    .links.text-center
+      = link_to "Home &nbsp;&nbsp;&nbsp;".html_safe, root_path
+      = " • "
+      = link_to "&nbsp;&nbsp;&nbsp; About &nbsp;&nbsp;&nbsp;".html_safe, "#about"
+      = " • "
+      a href="https://www.dropbox.com/s/67rgsgy6vxrpjft/UXResearch_BAO.pdf?dl=0" target="_blank"
+        ="&nbsp;&nbsp;&nbsp; Resume ".html_safe

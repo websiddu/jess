@@ -42,6 +42,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'jpbuilder'
 
+gem 'ckeditor'
+gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
 
 # Database
 gem "mongoid", "~> 4.0.0"

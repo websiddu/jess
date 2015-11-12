@@ -1,13 +1,16 @@
 header.row.header.small
-  .col-lg-3
+  .col-lg-12.text-center
     .header-img
       = link_to root_path do
         img src="https://media.licdn.com/media/AAEAAQAAAAAAAAZQAAAAJGI1MjJmMjg1LTVlYzctNDRkYS04OTE3LTRjODVmMmJjYWE4YQ.jpg" alt=""
-  .col-lg-9
+  .col-lg-12.text-center
     .header-text
-      = "Hi I am "
-      strong Jessica
-      = ".. I am a "
-      span
-        = "user researcher"
-      = ", a self-starter, and a problem solver. Empathy, curiosity, and simplicity keep me tuned and creative."
+      = "I am a user researcher, a self-starter, and a problem solver."
+      br
+      = "Empathy, curiosity, and simplicity keep me tuned and creative."
+    .links.text-center
+      = link_to "Home &nbsp;&nbsp;&nbsp;".html_safe, root_path
+      = " • "
+      = link_to "&nbsp;&nbsp;&nbsp; About &nbsp;&nbsp;&nbsp;".html_safe, root_path
+      = " • "
+      = link_to "&nbsp;&nbsp;&nbsp; Resume ".html_safe, root_path

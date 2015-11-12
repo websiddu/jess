@@ -1,8 +1,8 @@
 class ProjectsController < ApplicationController
   include ProjectsHelper
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, :except => [:index, :show, :vote]
-  acts_as_token_authentication_handler_for User, except: [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :show, :vote, :landing]
+  acts_as_token_authentication_handler_for User, except: [:index, :show, :landing]
   protect_from_forgery with: :null_session
 
 

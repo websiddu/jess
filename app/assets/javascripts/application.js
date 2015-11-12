@@ -17,6 +17,8 @@
 
 //= require sortable
 
+//= require ckeditor/init
+
 //= require ws
 //= require_tree ./web
 

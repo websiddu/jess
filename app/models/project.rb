@@ -15,7 +15,9 @@ class Project
   field :sequence, type: Integer, default: 0
   field :thumbnail
   field :banner
-  field :screenshots
+  field :team
+  field :tools
+  field :contribution
   field :archived, type: Mongoid::Boolean, default: false
   field :views, type: Integer, default: 0
   def self.archived
