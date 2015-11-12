@@ -1,3 +1,8 @@
+.section {
+  padding: 20px 0;
+}
+
+
 .post {
   position: relative;
   p, li {
@@ -106,6 +111,8 @@
 }
 
 #sortable-list {
+  margin: 0;
+  padding: 0;
   list-style-type: none;
   li {
     background: #fff;
@@ -116,6 +123,13 @@
   li.sortable-ghost {
     cursor: -webkit-grabbing;
     background: #efefea;
+  }
+  h3 {
+    margin: 9px 0;
+    font-size: 20px;
+  }
+  .actions {
+    margin-top: 12px;
   }
 
 }

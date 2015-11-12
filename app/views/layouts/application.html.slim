@@ -7,8 +7,7 @@ html
     = csrf_meta_tags
   body
     .container
-      .row
-        = yield
+      = yield
       / .large-2.columns
       /   = render "shared/sidebar"
       / .large-10.columns

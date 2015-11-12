@@ -9,11 +9,11 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all()
+    @projects = Project.order_by([[ :sequence, :desc ]]).paginate(:page => params[:page], :per_page => params[:per_page])
   end
 
   def landing
-    @projects = Project.all()
+    @projects = Project.order_by([[ :sequence, :desc ]]).paginate(:page => params[:page], :per_page => params[:per_page])
   end
 
 
