@@ -15,6 +15,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'newrelic_rpm'
 
+gem 'simple_form'
+
 gem 'githubstats'
 gem 'githubchart'
 

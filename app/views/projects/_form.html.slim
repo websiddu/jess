@@ -1,4 +1,4 @@
-= form_for(@project) do |f|
+= simple_form_for(@project, html: { class: 'form' }) do |f|
   - if @project.errors.any?
     #error_explanation
       h2
@@ -7,82 +7,28 @@
       ul
         - @project.errors.full_messages.each do |msg|
           li = msg
-  .row
-    .large-12.columns
-      = f.label :title
-      = f.text_field :title
+  = f.input :title
+  = f.input :sequence
+  = f.input :projectUrl
+  = f.input :date
+  = f.input :isActive
+  = f.input :size, collection: [['large', 'large'], ['medium', 'medium'], ['small', 'small'], ['mini', 'mini'], ['other', 'other']]
 
-  .row
-    .large-12.columns
-      = f.label :sequence
-      = f.number_field :sequence
+  = f.input :shortDescription
 
-  .row
-    .large-12.columns
-      = f.label :projectUrl
-      = f.text_field :projectUrl
-  .row
-    .large-12.columns
-      = f.label :date
-      = f.date_field :date
-  .row
-    .large-12.columns
-      = f.label :isActive
-      = f.check_box :isActive
-  .row
-    .large-12.columns
-      = f.label :size
-      = f.select(:size, [['large', 'large'], ['medium', 'medium'], ['small', 'small'], ['mini', 'mini'], ['other', 'other'],])
-  br
-  .row
-    .large-12.columns
-      = f.label :shortDescription
-      = f.text_field :shortDescription
+      / #textEditor.editor
+  = f.input :description
 
-  .row
-    .large-12.columns
-      = f.label :description
-      #textEditor.editor
-      = f.text_area :description
+  = f.input :tags
 
-  .row
-    .large-12.columns
-      = f.label :tags
-      = f.text_field :tags
+  = f.input :thumbnail
+  = f.input :banner
+  = f.input :screenshots
 
-  .row
-    .large-12.columns
-      = f.label :thumbnail
-      = f.text_field :thumbnail
-  .row
-    .large-12.columns
-      = f.label :banner
-      = f.text_field :banner
-  br
-
-  br
-  .row
-    .large-12.columns
-      = f.label :screenshots
-      = f.text_field :screenshots
-
-  br
-
-  .row
-    .large-12.columns
-      = f.label :votes
-      = f.number_field :votes
-
-  br
-
-  .row
-    .large-12.columns
-      = f.label :archived
-      = f.check_box :archived
+  = f.check_box :archived
 
   .actions
-    button.submit type="submit"
-      = "Submit"
+    = f.button :submit
 
 
   / field :thumbnail

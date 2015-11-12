@@ -9,14 +9,13 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    if params[:archived]
-      @projects = Project.archived.order_by([[ :sequence, :desc ]]).paginate(:page => params[:page], :per_page => params[:per_page])
-    elsif params[:active]
-      @projects = Project.active.order_by([[ :sequence, :desc ]]).paginate(:page => params[:page], :per_page => params[:per_page])
-    else
-      @projects = Project.order_by([[ :sequence, :desc ]]).paginate(:page => params[:page], :per_page => params[:per_page])
-    end
+    @projects = Project.all()
   end
+
+  def landing
+    @projects = Project.all()
+  end
+
 
   # GET /projects/1
   # GET /projects/1.json

@@ -1,18 +1,19 @@
 Jessicabao::Application.routes.draw do
 
+  root to: "projects#landing"
+
   resources :arts
-
   resources :projects
-
-  post "projects_sort" => 'projects#sort'
-
   resources :github
 
+  post "projects_sort" => 'projects#sort'
   get "githubimg" => "githubimg#index", format: :svg
 
-  devise_for :users
 
-  root to: "projects#index"
+  get "/admin/projects" => "projects#index"
+
+
+  devise_for :users
 
   scope :api do
     get "/projects(.:format)" => "projects#index", :defaults=>{:format=> 'js'}

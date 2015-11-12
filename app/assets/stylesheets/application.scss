@@ -1,9 +1,8 @@
-
-
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@import "web/scaffolds";
 @import "web/jqueryui";
 @import "web/projects";
+@import "web/landing";
 @import "web/arts";

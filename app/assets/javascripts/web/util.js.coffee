@@ -28,5 +28,4 @@ ws.common.util = do ->
 
   init: ->
     # This should run all the time
-    initFoundaiton()
     initAceEditor()

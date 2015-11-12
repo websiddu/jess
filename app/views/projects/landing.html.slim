@@ -1,0 +1,16 @@
+
+.landing-heading
+  .line
+  .text Selected Projects
+
+- @projects.reverse!.each do |project|
+  div.card.full.col-sm-6 class="col-md-#{project.size} col-lg-#{project.size}"
+    .design
+      .design-shot
+        .design-img
+          = link_to project, html_options = {class: "design-link"} do
+            img.img.img-responsive src="#{project.thumbnail}"
+          / a.design-link(href='/portfolio/post/' + post.slug)
+          /   img src=post._.image.fit()).img.img-responsive
+          = link_to project, html_options = {class: "design-over"} do
+            span = project.title
