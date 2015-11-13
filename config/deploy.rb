@@ -7,6 +7,7 @@ set :application,     'jess'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
+set :keep_releases, 5
 
 # Don't change these unless you know what you're doing
 set :pty,             true
@@ -84,23 +85,26 @@ namespace :deploy do
         run_locally do
           with rails_env: fetch(:rails_env) do
             execute 'rake assets:precompile'
-            execute 'touch assets.tgz && rm assets.tgz'
-            execute 'tar zcvf assets.tgz public/assets/'
+            execute 'touch assets.zip && rm assets.zip'
+            execute 'zip -r assets.zip public/assets/'
           end
         end
 
         within release_path do
           with rails_env: fetch(:rails_env) do
-            old_manifest_path = "#{shared_path}/public/assets/manifest*"
-            execute :rm, old_manifest_path if test "[ -f #{old_manifest_path} ]"
-            upload!('assets.tgz', "#{shared_path}/public/", recursive: true)
-            execute("tar zxvf #{shared_path}/public/assets.tgz; rm #{shared_path}/public/assets.tgz")
+            # old_manifest_path = "#{shared_path}/public/assets/manifest*"
+            # execute :rm, old_manifest_path if test "[ -f #{old_manifest_path} ]"
+            upload!('assets.zip', "#{shared_path}/public/", recursive: true)
+            execute("rm -rf #{shared_path}/public/assets || true")
+            execute("cd #{shared_path}/public/; unzip -o assets.zip; cd ;")
+            execute("mv #{shared_path}/public/public/assets #{shared_path}/public/")
 
             # upload!('./public/assets/', "#{shared_path}/public/", recursive: true)
           end
         end
 
         run_locally { execute 'rm -rf public/assets' }
+        run_locally { execute 'rm assets.zip' }
       end
     end
 
