@@ -14,4 +14,6 @@
             / a.design-link(href='/portfolio/post/' + post.slug)
             /   img src=post._.image.fit()).img.img-responsive
             = link_to project, html_options = {class: "design-over"} do
-              span = project.title
+              span
+                = project.title
+                small = project.tags

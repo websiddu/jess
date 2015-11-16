@@ -1,3 +1,4 @@
+
 .section {
   padding: 20px 0;
 }
@@ -35,8 +36,14 @@
     padding: 0;
   }
 
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
   h3 {
-    font-size: 15px;
+    font-size: 20px;
     text-transform: uppercase;
     color: #000;
     font-weight: bold;
@@ -50,6 +57,7 @@
   h4 {
     font-size: 15px;
     font-weight: bold;
+    text-transform: uppercase;
     color: #444;
   }
 
