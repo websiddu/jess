@@ -150,8 +150,10 @@ a:-webkit-any-link {
     font-weight: 300;
     small {
       display: block;
-      font-size: 15px;
-      color: #BDBDBD;
+      font-size: 16px;
+      color: #fff;
+      font-weight: bold;
+      // text-transform: uppercase;
     }
     .sep {
       margin: 0 2px;
