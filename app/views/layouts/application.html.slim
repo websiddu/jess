@@ -9,10 +9,11 @@ html
     = csrf_meta_tags
   body
     .container
-      = yield
-      / .large-2.columns
-      /   = render "shared/sidebar"
-      / .large-10.columns
-      = render "shared/footer"
+      .content
+        = yield
+        / .large-2.columns
+        /   = render "shared/sidebar"
+        / .large-10.columns
+        = render "shared/footer"
     = javascript_include_tag "application"
 

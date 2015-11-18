@@ -47,13 +47,14 @@ p, a, div, span, i {
   font-weight: 300;
 }
 
-
 .container {
   max-width: 960px;
-  padding: 0 60px;
   background: #FFF;
 }
 
+.content {
+  padding: 0 60px;
+}
 
 .row.full {
   margin: 0 -45px;
