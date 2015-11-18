@@ -1,0 +1,20 @@
+@media (max-width: 767px) {
+  .container {
+    padding: 0;
+  }
+
+  footer {
+    padding: 0 60px;
+    margin: 90px 0 0;
+  }
+
+    .landing-heading .line {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .card.full {
+      margin: 20px 0;
+      padding: 0;
+    }
+}
