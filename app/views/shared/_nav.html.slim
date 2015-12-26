@@ -7,5 +7,6 @@
   = "&nbsp;&nbsp;&nbsp;&nbsp;".html_safe
   = " • "
   = "&nbsp;&nbsp;&nbsp;&nbsp;".html_safe
-  a href="https://www.dropbox.com/s/67rgsgy6vxrpjft/UXResearch_BAO.pdf?dl=0" target="_blank"
+  - current_resume_url = Resume.where(:is_current => true).first.try(:resume).try(:url)
+  a href="#{current_resume_url}" target="_blank"
     ="Resume".html_safe

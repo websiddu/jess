@@ -1,5 +1,7 @@
 Jessicabao::Application.routes.draw do
 
+  resources :resumes
+
   mount Ckeditor::Engine => '/ckeditor'
   root to: "projects#landing"
 

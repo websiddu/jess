@@ -1,0 +1,21 @@
+= simple_form_for(@resume, html: { class: 'form' }) do |f|
+  - if @resume.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@resume.errors.count, "error")
+        | prohibited this project from being saved:
+      ul
+        - @resume.errors.full_messages.each do |msg|
+          li = msg
+  = f.input :resume
+  = f.input :is_current, as: :radio_buttons
+
+
+  br
+  .actions
+    = f.button :submit
+
+
+  / field :thumbnail
+  / field :banner
+  / field :screenshots

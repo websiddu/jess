@@ -1,0 +1,28 @@
+= render "shared/header_small"
+
+p#notice
+  = notice
+
+h3 Jessica's Resumes
+table.table
+  thead
+    tr
+      th URL
+      th Last Updated
+      th Is Current
+      th
+      th
+      th
+  tbody
+    tr
+      td
+         = link_to @resume.resume.original_filename, @resume.resume.url, target: '_blank'
+      td = @resume.updated_at
+      td = @resume.is_current
+      td = link_to 'Show', @resume
+      td = link_to 'Edit', edit_resume_path(@resume)
+      td = link_to 'Destroy', @resume, method: :delete, data:{confirm: 'Are you sure?'}
+br/
+= link_to 'Back', resumes_path, class: 'btn btn-primary btn-xs'
+== "&nbsp;&nbsp;&nbsp;&nbsp;"
+= link_to 'New Resume', new_resume_path, class: 'btn btn-primary btn-xs'
