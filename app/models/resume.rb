@@ -7,8 +7,8 @@ class Resume
   field :is_current, type: Boolean
   has_mongoid_attached_file :resume
   has_mongoid_attached_file :resume,
-                            :url => "/resume/attachments/:id/:filename",
-                            :path => ":rails_root/public/resume/attachments/:id/:filename"
+                            :url => "/uploads/attachments/:id/:filename",
+                            :path => ":rails_root/public/uploads/attachments/:id/:filename"
 
   validates_attachment_presence :resume
   validates_attachment_size :resume, :less_than => 10.megabytes
