@@ -1,0 +1,16 @@
+= simple_form_for(@setting, html: { class: 'form' }) do |f|
+  - if @setting.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@project.errors.count, "error")
+        | prohibited this project from being saved:
+      ul
+        - @project.errors.full_messages.each do |msg|
+          li = msg
+  = f.input :about, as: :text
+  = f.input :blurb, as: :text
+  = f.input :pic
+
+  br
+  .actions
+    = f.button :submit

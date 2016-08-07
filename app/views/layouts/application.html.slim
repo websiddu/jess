@@ -11,9 +11,6 @@ html
     .container
       .content
         = yield
-        / .large-2.columns
-        /   = render "shared/sidebar"
-        / .large-10.columns
-        = render "shared/footer"
+        = render "shared/footer", locals: {settings: @settings}
     = javascript_include_tag "application"
 

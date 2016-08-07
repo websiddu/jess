@@ -4,9 +4,10 @@
       .row
         .col-lg-7
           h3 ABOUT
-          p = "I'm a graduating senior majoring in Human Centered Design and Engineering at the University of Washington with 2 years experience of UX Research and Design."
-          p = "I have the habit of observing people’s behavior and fascination with resolving their confusion with technology."
-          p = "I recently achieved 2015 Volunteer of the Year Award in recognition of my stellar leadership and service to the User Experience Professionals Association of Seattle."
+          - @jes_settings.about.split("\n").each do |line|
+            p
+              = line
+
         .col-lg-1
         .col-lg-4
           h3 CONTACT

@@ -2,10 +2,10 @@ header.row.header.small
   .col-lg-12.text-center
     .header-img
       = link_to root_path do
-        img src="https://media.licdn.com/media/AAEAAQAAAAAAAAgvAAAAJGZjYjRlMWI0LTYyYTgtNGU4ZS1hMmJjLTYwMTAxMTEyMTQ3Mg.jpg" alt=""
+        img src="#{@jes_settings.pic}" alt="Jessica Bao"
   .col-lg-12.text-center
     .header-text
-      = "I am a UX researcher, an observer, and a communicator."
-      br
-      = "Empathy, curiosity, and simplicity keep me tuned and creative."
+      - @jes_settings.blurb.split("\n").each do |line|
+        = line
+        br
     = render "shared/nav"

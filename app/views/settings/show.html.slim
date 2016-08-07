@@ -1,0 +1,22 @@
+= render "shared/header_small"
+
+<h1>Settings</h1>
+
+div style="font-size: 15px;"
+  h4 = "About"
+  div
+    - @setting.about.split("\n").each do |line|
+      p
+        = line
+  h4 = "Blurb"
+  div
+    - @setting.blurb.split("\n").each do |line|
+      p
+        = line
+
+  h4 = "Picture URL"
+  p
+    = @setting.pic
+
+  = link_to 'Edit', edit_setting_path(@setting), class: 'btn btn-primary'
+

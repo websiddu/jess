@@ -1,5 +1,7 @@
 Jessicabao::Application.routes.draw do
 
+  resources :settings
+
   resources :resumes
 
   mount Ckeditor::Engine => '/ckeditor'
