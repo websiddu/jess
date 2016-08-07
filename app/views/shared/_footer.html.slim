@@ -4,9 +4,10 @@
       .row
         .col-lg-7
           h3 ABOUT
-          - @jes_settings.about.split("\n").each do |line|
-            p
-              = line
+          - if @jes_settings
+            - @jes_settings.about.split("\n").each do |line|
+              p
+                = line
 
         .col-lg-1
         .col-lg-4

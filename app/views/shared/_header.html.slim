@@ -2,7 +2,8 @@ header.row.header
   .col-lg-12
     .header-img.text-center
       = link_to root_path do
-        img src="#{@jes_settings.pic}" alt="Jessica Bao"
+        - if @jes_settings
+          img src="#{@jes_settings.pic}" alt="Jessica Bao"
     .header-brand.text-center
       = link_to root_path do
         h1 = "JESSICA BAO"
@@ -10,7 +11,8 @@ header.row.header
 
   .col-lg-12
     .header-text.text-center
-      - @jes_settings.blurb.split("\n").each do |line|
-        = line
-        br
+      - if @jes_settings
+        - @jes_settings.blurb.split("\n").each do |line|
+          = line
+          br
     = render "shared/nav"
